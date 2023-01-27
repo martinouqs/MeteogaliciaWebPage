@@ -20,24 +20,18 @@ export class DatatableComponent implements OnDestroy, OnInit {
   constructor(private http: HttpClient) { }
 
     ngOnInit(): void {
-      this.dtOptions = {
-        pagingType: 'full_numbers',
-        pageLength: 8
-      };
-
       this.http.get('https://servizos.meteogalicia.gal/mgrss/observacion/listaEstacionsMeteo.action').subscribe((res: any)=>{
         this.listaEstacionsMeteo = res.listaEstacionsMeteo;
         this.dtTrigger.next;
       });
-
     }
 
     sort(headerName:String){
       this.orderHeader = headerName;
       this.isDescOrder = !this.isDescOrder;
     }
+
     ngOnDestroy(): void {
       this.dtTrigger.unsubscribe();
     }
-
 }

@@ -1,1 +1,32 @@
-<p>redirection works!</p>
+
+<!--
+  <img src="/src/assets/imgs/sun.png" alt="Sun"> -->
+
+  <a [routerLink]="['/datatable']">Volver á lista</a>
+
+  <h1> Datos diarios</h1>
+
+  <div class="container">
+    <!-- <h1>{{ldd.estacion}}</h1> -->
+    <table mat-table class="table table-bordered hover w-75 text-align-center">
+      <thead>
+        <tr>
+          <th>Nome prámetro</th>
+          <th>Unidade</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ldd of listDatosDiarios | ObjToArray">
+            <td>{{ldd?.listaEstacions?.estacion}}</td>
+            <td>{{ldd?.listaEstacions?.unidade}}</td>
+            <td>{{ldd?.listaEstacions?.valor}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <!-- <img src="/src/assets/imgs/cloud.png" alt="Cloud"> -->
+
+
+

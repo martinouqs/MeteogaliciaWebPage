@@ -1,5 +1,5 @@
 
-  <img src="" alt="Cloud">
+  <img src="/src/assets/imgs/cloud.png" alt="Cloud">
 
   <h1> Estaciones meteorolóxicas</h1>
 
@@ -22,7 +22,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let lem of listaEstacionsMeteo | filter:searchText | paginate:{itemsPerPage:8, currentPage:actualPage} | orderBy: orderHeader : isDescOrder" >
-          <td>{{lem.estacion}}</td>
+          <td>
+            <a [routerLink]="['/redirection']">
+              {{lem.estacion}}
+            </a>
+          </td>
           <td>{{lem.provincia}}</td>
           <td>{{lem.concello}}</td>
           <td>{{lem.altitude}}</td>
@@ -35,6 +39,7 @@
 
   </div>
 
-  <img src="" alt="Sun">
+  <img src="/src/assets/imgs/sun.png" alt="Sun">
+
 
 
