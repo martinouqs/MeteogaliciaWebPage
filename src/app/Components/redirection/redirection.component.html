@@ -1,14 +1,22 @@
+<div id="main"class="container position-relative">
+<div id="header">
+  <img id="sun2" class="img-responsive position-absolute" src="./assets/imgs/sun.png" alt="Cloud">
+  <div>
+    <a id="return" [routerLink]="['/datatable']">Volver á lista</a>
 
-<!--
-  <img src="/src/assets/imgs/sun.png" alt="Sun"> -->
+    <h1> Datos diarios</h1>
+  </div>
 
-  <a [routerLink]="['/datatable']">Volver á lista</a>
+</div>
 
-  <h1> Datos diarios</h1>
 
   <div class="container">
-    <!-- <h1>{{ldd.estacion}}</h1> -->
-    <table mat-table class="table table-bordered hover w-75 text-align-center">
+
+    <div id="dayHeaderInfo">
+       <!-- <h1>{{estacion}}</h1> -->
+    </div>
+
+    <table id="dayInformation" mat-table class="table hover w-75 text-align-center">
       <thead>
         <tr>
           <th>Nome prámetro</th>
@@ -26,7 +34,5 @@
     </table>
 
   </div>
-  <!-- <img src="/src/assets/imgs/cloud.png" alt="Cloud"> -->
-
-
-
+  <img id="cloud2" class="img-responsive" width="220px" src="./assets/imgs/cloud.png" alt="Cloud">
+</div>

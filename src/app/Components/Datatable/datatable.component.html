@@ -1,17 +1,19 @@
+<div id="main"class="container position-relative">
+  <div id="header" class="container">
 
-  <img src="/src/assets/imgs/cloud.png" alt="Cloud">
+    <img id="cloud1" class="img-responsive" width="220px" src="./assets/imgs/cloud.png" alt="Cloud">
 
-  <h1> Estaciones meteorolóxicas</h1>
+    <h1> Estaciones <br> meteorolóxicas</h1>
 
-  <div class="container">
+  </div>
 
-    <nav class="navbar">
-      <input type="text" name="search" [(ngModel)]="searchText" aria-label="Search">
-    </nav>
+  <div class="container w-100 mt-5">
 
-    <table mat-table class="table table-bordered hover w-75 text-align-center" matSort>
+      <input id="searchInput" type="text" name="search" [(ngModel)]="searchText" aria-label="Search">
+
+    <table id="weatherTable" mat-table class="table hover w-75 p-5" matSort>
       <thead>
-        <tr>
+        <tr class="mt-5">
           <th (click)="sort('estacion')">Nome da estación</th>
           <th (click)="sort('provincia')">Provincia</th>
           <th (click)="sort('concello')">Concello</th>
@@ -21,7 +23,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let lem of listaEstacionsMeteo | filter:searchText | paginate:{itemsPerPage:8, currentPage:actualPage} | orderBy: orderHeader : isDescOrder" >
+        <tr class="mt-5 p-5" *ngFor="let lem of listaEstacionsMeteo | filter:searchText | paginate:{itemsPerPage:8, currentPage:actualPage} | orderBy: orderHeader : isDescOrder" >
           <td>
             <a [routerLink]="['/redirection']">
               {{lem.estacion}}
@@ -35,11 +37,14 @@
         </tr>
       </tbody>
     </table>
-    <pagination-controls (pageChange)="actualPage = $event"></pagination-controls>
+    <div id="paginationRow">
+      <pagination-controls (pageChange)="actualPage = $event"></pagination-controls>
+    </div>
+
 
   </div>
 
-  <img src="/src/assets/imgs/sun.png" alt="Sun">
-
+  <img id="sun1" class="img-responsive position-absolute" src="./assets/imgs/sun.png" alt="Cloud">
+</div>
 
 

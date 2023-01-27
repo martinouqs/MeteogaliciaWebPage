@@ -1,0 +1,51 @@
+*{
+  color: black;
+}
+#main{
+  height:110vh;
+}
+a{
+  text-decoration:none;
+}
+
+#header{
+  display: inline-block;
+  width: auto;
+  margin: auto;
+}
+h1{
+  color: #0404B4;
+  margin-top: 1.5em;
+  margin-left: 4.5em;
+
+}
+#return{
+  marrgin-left:-8em;
+  float:right;
+  margin-top:-2em;
+  color: #D9B616;
+  font-size: 19px;
+}
+#dayHeaderInfo{
+  width: 70%;
+  height:6em;
+  background-color: #E1A800;
+  margin-left:8em;
+}
+#sun2{
+  float:left;
+  margin-left:-4em;
+}
+#cloud2{
+  float:right;
+  margin-top:8em;
+  margin-right:-4em;
+  }
+
+ #dayInformation{
+    margin-top:2em;
+    margin-left:7em;
+  }
+  th{
+    color: #3A01DF;
+  }

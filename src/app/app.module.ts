@@ -16,7 +16,8 @@ import { ObjToArrayPipe } from 'objToArray.pipe';
 
 const routes:Routes = [
   { path: 'datatable', component: DatatableComponent},
-  { path: 'redirection', component: RedirectionComponent}
+  { path: 'redirection', component: RedirectionComponent},
+  { path: '',   redirectTo: 'datatable', pathMatch: 'full' }
 ];
 @NgModule({
   declarations: [
