@@ -1,0 +1,40 @@
+<body>
+  <img src="" alt="Cloud">
+
+  <h1> Estaciones meteorolóxicas</h1>
+
+  <div class="container">
+
+    <div class="input-group rounded">
+      <input type="search" class="form-control w-25" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
+
+
+    </div>
+    <table   class="table hover w-75 text-align-center">
+      <thead>
+        <tr>
+          <th mat-sort-header="estacion">Nome da estación</th>
+          <th mat-sort-header="provincia">Provincia</th>
+          <th mat-sort-header="concello">Concello</th>
+          <th mat-sort-header="altitude">Altitude</th>
+          <th mat-sort-header="lat">Latitude</th>
+          <th mat-sort-header="lon">Lonxitude</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lem of listaEstacionsMeteo">
+          <td>{{lem.estacion}}</td>
+          <td>{{lem.provincia}}</td>
+          <td>{{lem.concello}}</td>
+          <td>{{lem.altitude}}</td>
+          <td>{{lem.lat}}</td>
+          <td>{{lem.lon}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <img src="" alt="Sun">
+</body>
+
