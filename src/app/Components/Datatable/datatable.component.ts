@@ -13,6 +13,7 @@ export class DatatableComponent implements OnDestroy, OnInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger = new Subject();
   listaEstacionsMeteo: any;
+  actualPage: number = 1;
 
 
   constructor(private http: HttpClient) { }
@@ -29,16 +30,6 @@ export class DatatableComponent implements OnDestroy, OnInit {
       });
 
     }
-
-    // Search(){
-    //   if(this.listaEstacionsMeteo == ""){
-    //     this.ngOnInit();
-    //   }else{
-    //     this.listaEstacionsMeteo.filter(res=>{
-    //       return res.estacion.toLocaleLowerCase().match(this.listaEstacionsMeteo.toLocaleLowerCase)
-    //     })
-    //   }
-    // }
 
     ngOnDestroy(): void {
       this.dtTrigger.unsubscribe();

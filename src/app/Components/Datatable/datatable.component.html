@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let lem of listaEstacionsMeteo | filter:searchText">
+        <tr *ngFor="let lem of listaEstacionsMeteo | filter:searchText | paginate:{itemsPerPage:8, currentPage:actualPage}">
           <td>{{lem.estacion}}</td>
           <td>{{lem.provincia}}</td>
           <td>{{lem.concello}}</td>
@@ -30,6 +30,7 @@
         </tr>
       </tbody>
     </table>
+    <pagination-controls (pageChange)="actualPage = $event"></pagination-controls>
 
   </div>
 
