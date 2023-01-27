@@ -12,11 +12,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { RedirectionComponent } from './Components/redirection/redirection.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DatatableComponent
+    DatatableComponent,
+    RedirectionComponent
   ],
   imports: [
     BrowserModule,

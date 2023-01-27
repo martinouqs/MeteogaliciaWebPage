@@ -14,7 +14,8 @@ export class DatatableComponent implements OnDestroy, OnInit {
   dtTrigger = new Subject();
   listaEstacionsMeteo: any;
   actualPage: number = 1;
-
+  orderHeader: String = '';
+  isDescOrder: boolean = true;
 
   constructor(private http: HttpClient) { }
 
@@ -31,6 +32,10 @@ export class DatatableComponent implements OnDestroy, OnInit {
 
     }
 
+    sort(headerName:String){
+      this.orderHeader = headerName;
+      this.isDescOrder = !this.isDescOrder;
+    }
     ngOnDestroy(): void {
       this.dtTrigger.unsubscribe();
     }

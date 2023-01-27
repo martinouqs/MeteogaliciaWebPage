@@ -1,4 +1,4 @@
-<body>
+
   <img src="" alt="Cloud">
 
   <h1> Estaciones meteorolóxicas</h1>
@@ -8,19 +8,20 @@
     <nav class="navbar">
       <input type="text" name="search" [(ngModel)]="searchText" aria-label="Search">
     </nav>
-    <table class="table table-bordered hover w-75 text-align-center">
+
+    <table mat-table class="table table-bordered hover w-75 text-align-center" matSort>
       <thead>
         <tr>
-          <th>Nome da estación</th>
-          <th>Provincia</th>
-          <th>Concello</th>
-          <th>Altitude</th>
-          <th>Latitude</th>
-          <th>Lonxitude</th>
+          <th (click)="sort('estacion')">Nome da estación</th>
+          <th (click)="sort('provincia')">Provincia</th>
+          <th (click)="sort('concello')">Concello</th>
+          <th (click)="sort('altitude')">Altitude</th>
+          <th (click)="sort('lat')">Latitude</th>
+          <th (click)="sort('lon')">Lonxitude</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let lem of listaEstacionsMeteo | filter:searchText | paginate:{itemsPerPage:8, currentPage:actualPage}">
+        <tr *ngFor="let lem of listaEstacionsMeteo | filter:searchText | paginate:{itemsPerPage:8, currentPage:actualPage} | orderBy: orderHeader : isDescOrder" >
           <td>{{lem.estacion}}</td>
           <td>{{lem.provincia}}</td>
           <td>{{lem.concello}}</td>
@@ -35,5 +36,5 @@
   </div>
 
   <img src="" alt="Sun">
-</body>
+
 
